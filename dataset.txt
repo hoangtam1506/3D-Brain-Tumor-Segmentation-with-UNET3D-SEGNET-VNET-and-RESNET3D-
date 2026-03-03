@@ -1,0 +1,6 @@
+dataset XAI:
+https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+
+
+dataset 3D:
+https://www.kaggle.com/datasets/krishna9702/brats701515
