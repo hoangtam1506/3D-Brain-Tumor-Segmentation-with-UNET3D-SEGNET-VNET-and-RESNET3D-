@@ -60,4 +60,140 @@ Số lượng tập dữ liệu: tập dữ liệu gồm 334 trường hợp, kh
 <img width="902" height="329" alt="image" src="https://github.com/user-attachments/assets/5e4c1c98-ee4e-43fc-8b82-7c43be7260fe" />
 
 **3. Phương pháp đề xuất**
+
+**Thu thập dữ liệu**
+
+Dự án sử dụng tập dữ liệu BraTS 2020 (Brain Tumor Segmentation Challenge 2020), một bộ dữ liệu y tế chuyên dùng cho nghiên cứu phát hiện và phân đoạn khối u não trên ảnh MRI.
+
+BraTS 2020 là một trong những benchmark quan trọng trong lĩnh vực Medical Image Segmentation với các mục tiêu chính:
+
+•	Phân đoạn khối u não từ ảnh MRI đa chuỗi (multi-modal MRI)
+
+•	Hỗ trợ dự đoán tiên lượng
+
+•	Đánh giá độ không chắc chắn của mô hình phân đoạn
+
+**Tiền xử lý dữ liệu**
+
+Trước khi huấn luyện, dữ liệu được tiền xử lý để đảm bảo tính nhất quán và cải thiện chất lượng đầu vào:
+
+•	Chuẩn hóa kích thước và định dạng ảnh
+
+•	Lọc nhiễu và cân bằng cường độ sáng
+
+•	Giảm sai lệch giữa các lớp dữ liệu
+
+**Xây dựng mô hình**
+
+Hệ thống sử dụng các kiến trúc CNN 3D để xử lý dữ liệu MRI dạng thể tích:
+
+•	U-Net3D
+
+•	V-Net3D
+
+•	SegNet3D
+
+•	ResUNet3D
+
+**Đánh giá mô hình**
+
+Hiệu suất mô hình được đánh giá thông qua các chỉ số:
+•	Accuracy
+
+•	Loss
+
+•	IoU (Intersection over Union)
+
+•	Mean IoU
+
+Các chỉ số này phản ánh khả năng phân đoạn chính xác vùng khối u so với ground truth.
+
+**Trực quan hóa kết quả 3D**
+
+Kết quả phân đoạn từ các mô hình được tái tạo dưới dạng mô hình 3D nhằm:
+
+•	Hiển thị kích thước và hình dạng khối u
+
+•	Xác định vị trí và biên giới tổn thương
+
+•	Hỗ trợ bác sĩ trong chẩn đoán và lập kế hoạch điều trị
+
+**Sơ đồ phương pháp đề xuất**
+<img width="950" height="533" alt="image" src="https://github.com/user-attachments/assets/ed72d20b-71c5-4c4d-979d-6d75a23eec3c" />
+
+
+
 **4. Kết quả**
+
+4.1	Kết quả huấn luyện và kiểm thử
+
+<img width="949" height="344" alt="image" src="https://github.com/user-attachments/assets/34e419a3-2cdc-49a7-9c36-de7959554e49" />
+
+<img width="957" height="360" alt="image" src="https://github.com/user-attachments/assets/8784ed09-bc80-45b6-ac6f-6dbb5c643fdc" />
+
+<img width="963" height="345" alt="image" src="https://github.com/user-attachments/assets/29b7d69d-44f5-4595-8d8e-0ac6e65d2e15" />
+
+
+4.2	Kết quả trên tập test
+
+<img width="960" height="324" alt="image" src="https://github.com/user-attachments/assets/14904f87-5e69-42c4-be36-fdfe4a2b3c66" />
+
+<img width="961" height="351" alt="image" src="https://github.com/user-attachments/assets/eb36eab2-64cd-4e43-9309-d5413b8e1fe3" />
+
+<img width="964" height="400" alt="image" src="https://github.com/user-attachments/assets/cc4d7579-2bb8-4ac5-906f-d9e432983cd2" />
+
+
+4.1.3	Kết quả trực quan hóa 3D
+
+**ẢNH GỐC**
+
+<img width="1056" height="1104" alt="image" src="https://github.com/user-attachments/assets/4116be98-9d4f-4421-8c14-c479982a7472" />
+
+Lớp 1: 28051 voxel.
+
+Lớp 2: 85954 voxel.
+
+Lớp 3: 13031 voxel
+
+**UNET**
+
+<img width="1031" height="1101" alt="image" src="https://github.com/user-attachments/assets/1e8b3746-05a6-4afd-b16a-823e28a29289" />
+
+Lớp 1: thể tích 33506.00 đơn vị khối.
+
+Lớp 2: thể tích 98616.00 đơn vị khối.
+
+Lớp 3: thể tích 26009.00 đơn vị khối.
+
+**Segnet**
+
+<img width="950" height="1130" alt="image" src="https://github.com/user-attachments/assets/dae21ee2-87f4-4e4c-b06a-204e92302a1f" />
+
+Lớp 1: thể tích 28634.00 đơn vị khối.
+
+Lớp 2: thể tích 78918.00 đơn vị khối.
+
+Lớp 3: thể tích 18971.00 đơn vị khối.
+
+
+**Resnet3D**
+
+<img width="1055" height="1134" alt="image" src="https://github.com/user-attachments/assets/a127a694-f80b-430d-9ffe-c7068f144314" />
+Lớp 1: thể tích 17664.00 đơn vị khối.
+
+Lớp 2: thể tích 159088.00 đơn vị khối.
+
+Lớp 3: thể tích 9680.00 đơn vị khối.
+
+**Vnet3D**
+
+<img width="1048" height="1151" alt="image" src="https://github.com/user-attachments/assets/87910d04-7996-49d0-8566-3b4d8f5da1fb" />
+
+Lớp 1: thể tích 29208.00 đơn vị khối.
+
+Lớp 2: thể tích 81224.00 đơn vị khối.
+
+Lớp 3: thể tích 24648.00 đơn vị khối.
+
+
+<img width="435" height="187" alt="image" src="https://github.com/user-attachments/assets/3f0712e0-c896-4e8b-87e5-f977051215f7" />
